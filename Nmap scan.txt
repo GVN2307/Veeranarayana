@@ -1,0 +1,20 @@
+------------- Nmap TCP SYN SCAN--------------------------------------
+nmap -sS 10.27.248.9
+Starting Nmap 7.98 ( https://nmap.org ) at 2025-12-09 10:45 +0530
+Nmap scan report for 10.27.248.25
+Host is up (0.000032s latency).
+Not shown: 997 closed tcp ports (reset)
+PORT    STATE SERVICE
+135/tcp open  msrpc
+139/tcp open  netbios-ssn
+445/tcp open  microsoft-ds
+
+Nmap done: 1 IP address (1 host up) scanned in 0.79 seconds
+
+------------MSPRC SERVICE -----------------------------------------
+MS-RPC (Microsoft Remote Procedure Call) is Microsoft's core communication protocol enabling programs on different computers (or even the same one) to call functions as if they were local, simplifying distributed applications like Active Directory, DNS, and Exchange; it's a powerful yet often-abused vector for attackers to move laterally, but also essential for legitimate tasks like agentless security event collection, relying on underlying DCE/RPC and tunneling over protocols like SMB. 
+--------------------NET BIOS SERVICE---------------------------------
+NetBIOS Session Service (NetBIOS-SSN) is a core part of NetBIOS, providing reliable, connection-oriented communication (like a phone call) for applications on a local network (LAN) to exchange data, often used for file/printer sharing (SMB) over TCP Port 139. It manages establishing, maintaining, and terminating sessions, ensuring data integrity and order for heavy traffic, unlike the connectionless Datagram Service. 
+---------------------MICROSOFT DS SERVICE------------------------------
+"Microsoft DS" can refer to two distinct technologies: either Microsoft Entra Domain Services (formerly Azure AD DS), a cloud-based managed domain service, or Microsoft-DS / SMB, the protocol used for file and printer sharing on a network, which uses port 445. The context typically determines which meaning is intended. Entra Domain Services manages identity and access in the cloud, while Microsoft-DS/SMB is a network protocol for accessing shared resources like files and printers. 
+vulnerabilities in this protocol have been exploited by malware, making it important to keep systems updated and secure network configurations. 
