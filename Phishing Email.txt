@@ -1,0 +1,31 @@
+----------------------------SAMPLE--------------------------------------------------------
+EMAIL ADRESS-- >
+      user
+      Google Notifications ( google-support@webnotifications[.]net )
+      to john[.]doe@mybusiness[.]com
+ BODY -- >
+        Sign-in attempt was blocked
+	john[.]doe@mybusiness[.]com
+	Someone just used your password to try to sign in to your account from a non-Google app. 
+	Google blocked them, but you should check what happened. Review your account activity 
+	to make sure no one else has access
+	         _______________
+	        |Check activity|
+                |______________|
+--------------------------ANALYSIS----------------------------------------------------------------
+-->Misleading Email Adresss & Header
+Here the sender email id is google-support@webnotification.com we can see this is not a gmail that is officially used by google
+most of google emails end with @google.com and also the isleading header is "Google Notifications" 
+-->Suspicious Attachment
+There is a Check activity link which May lead to Opening a anonymous link which is not a legit one 
+-->Threatening Language used 
+"Google blocked them, but you should check what happened" this is not such a language that a established organisations use so
+this is a suspicious one
+-->Mismatched Url 
+After Clicking the Check Activity link It leads to a Fake Google website where the url of link mismatches
+-->SUMMARY--------------------------------------------------------------------------------------------
+->The Email address from the email is not a legit one which in generally used by google 
+->The Header is a misleading one where it looks like a total a real one
+->Threatening language is used which is not a ideal language used by any kind of organizations
+->Misleading links are found which are asked to be clicked
+->The Link leads to similar looking URL that asks Passwords and looks similar to original
