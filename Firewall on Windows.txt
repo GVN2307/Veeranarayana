@@ -1,0 +1,98 @@
+TASK 4: SETUP AND USE A FIREWALL ON WINDOWS / LINUX
+--------------------------------------------------
+1. OBJECTIVE
+--------------------------------------------------
+The objective of this task is to configure and test basic firewall rules
+to allow or block network traffic using a host-based firewall.
+
+--------------------------------------------------
+2. TOOLS USED
+--------------------------------------------------
+• Linux: UFW (Uncomplicated Firewall)
+• Terminal
+
+--------------------------------------------------
+3. STEP-BY-STEP IMPLEMENTATION (LINUX – UFW)
+--------------------------------------------------
+
+Step 1: Open Firewall Configuration Tool
+Command:
+sudo ufw status
+
+Output:
+Status: inactive
+
+--------------------------------------------------
+Step 2: Enable the Firewall
+Command:
+sudo ufw enable
+
+Output:
+Firewall is active and enabled on system startup
+
+--------------------------------------------------
+Step 3: List Current Firewall Rules
+Command:
+sudo ufw status verbose
+
+Output:
+Status: active
+Default: deny (incoming), allow (outgoing), disabled (routed)
+
+--------------------------------------------------
+Step 4: Add Rule to Block Inbound Traffic on Port 23 (Telnet)
+Command:
+sudo ufw deny 23
+
+Output:
+Rule added
+Rule added (v6)
+
+--------------------------------------------------
+Step 5: Test the Blocked Port
+Command:
+telnet localhost 23
+
+Output:
+Trying 127.0.0.1...
+telnet: Unable to connect to remote host: Connection refused
+
+--------------------------------------------------
+Step 6: Add Rule to Allow SSH (Port 22)
+Command:
+sudo ufw allow 22
+
+Output:
+Rule added
+Rule added (v6)
+
+--------------------------------------------------
+Step 7: Remove the Test Block Rule (Restore Original State)
+Command:
+sudo ufw delete deny 23
+
+Output:
+Rule deleted
+
+--------------------------------------------------
+Step 8: Verify Final Firewall Rules
+Command:
+sudo ufw status
+
+Output:
+Status: active
+22/tcp ALLOW Anywhere
+22/tcp ALLOW Anywhere (v6)
+--------------------------------------------------
+5. SUMMARY
+--------------------------------------------------
+A firewall is a security mechanism that monitors and controls incoming
+and outgoing network traffic based on predefined rules.
+Inbound rules determine which external connections are allowed or blocked.
+By blocking unused or insecure ports such as Telnet (port 23), system
+security is improved. Allowing essential services like SSH (port 22)
+ensures secure remote access while maintaining protection.
+
+--------------------------------------------------
+TASK COMPLETED SUCCESSFULLY
+--------------------------------------------------
