@@ -1,0 +1,45 @@
+------------------------------------------------------------Tools Used-----------------------------------------------------------------------
+* **Browser:** Google Chrome (Version 120.0) / Mozilla Firefox
+* **Interface:** Browser Extensions Manager (`chrome://extensions`)
+
+-----------------------------------------------------------Procedure & Steps Taken-----------------------------------------------------------
+
+1.  **Accessing Manager:** I navigated to the browser settings menu, selected "Extensions," and chose "Manage Extensions" to view the full list of installed add-ons.
+2.  **Audit Process:** I reviewed the list specifically looking for:
+    * Extensions I did not remember installing.
+    * Extensions that haven't been used in over 6 months.
+    * Extensions labeled "Corrupted" or those removed from the Web Store by the developer.
+3.  **Permission Check:** For every active extension, I checked the "Details" to see if the permissions matched the functionality (e.g., a calculator app shouldn't need access to "Read and change all data on all websites").
+4.  **Removal:** I removed the identified suspicious extensions and cleared the browsing data.
+5.  **Verification:** I restarted the browser to ensure the extensions were gone and to check for performance improvements.
+
+------------------------------------------------Findings: Suspicious Extensions Identified---------------------------------------------------
+
+During the audit, I identified and removed the following extensions:
+
+**"Free PDF Converter Tool"** | Removed | Unrecognized/Adware behavior. Search engine kept changing to Yahoo unexpectedly. | **High Risk.** Requested "Read and change data on all websites" despite just being a converter. |
+**"Super Coupon Finder"** | Removed | Suspicious. Pop-up ads were appearing frequently on shopping sites. | **Medium Risk.** Tracked browsing history on unrelated e-commerce sites. |
+**"Dark Mode Everywhere"** | Removed | Unnecessary. Browser now has native dark mode support. | **Low Risk.** Not malicious, but outdated and unused code slows down the browser. |
+
+----------------------------------------------------Research: Risks of Malicious Extensions-------------------------------------------------------
+
+Based on my research for this task, malicious extensions can harm users in three primary ways:
+
+### A. Data Theft & Keylogging
+Some malicious extensions quietly record keystrokes to steal login credentials (usernames/passwords) or credit card numbers when the user shops online.
+
+### B. Browser Hijacking
+These extensions forcibly change the default search engine (e.g., from Google to a fake search site) or the homepage to generate advertising revenue for the attacker. They often prevent the user from changing the settings back.
+
+### C. Ad Injection (Adware)
+Extensions can inject unwanted advertisements into legitimate websites. This not only ruins the user experience but can also lead users to click on phishing links or download further malware.
+
+------------------------------------------------------Conclusion & Best Practices------------------------------------------------------------------------
+
+After removing the suspicious extensions and restarting the browser, I noticed a slight improvement in loading speeds and the search engine settings remained stable.
+
+**Key Takeaways:**
+* **Principle of Least Privilege:** Only install extensions that are absolutely necessary.
+* **Check Source:** Only download extensions from official stores (Chrome Web Store/Firefox Add-ons) and check the developer's reputation.
+* **Review Permissions:** If a simple extension asks for "Full Access" to your data, do not install it.
+* **Regular Audits:** Monthly checks of installed extensions are necessary to maintain browser hygiene.
