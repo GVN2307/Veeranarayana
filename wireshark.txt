@@ -1,0 +1,47 @@
+# Network Traffic Analysis Report
+
+## 1. Capture Overview
+* **Duration:** ~60 seconds
+* **Tools Used:** Wireshark
+* **Key Protocols Identified:** NTP, ARP, ICMPv6
+
+---
+
+## 2. Protocol Summaries
+The following protocols were identified during the background capture. These represent standard network maintenance and synchronization tasks.
+
+### 🌐 ARP (Address Resolution Protocol)
+* **Purpose:** Maps an IP address to a physical MAC address on the local network.
+* **Observation:** Frequent "Who has [IP]?" broadcasts. This is your computer ensuring it knows exactly which hardware device to send data to within the local area network (LAN).
+* **Key Detail:** Operates at the Data Link Layer (Layer 2).
+
+### 🕒 NTP (Network Time Protocol)
+* **Purpose:** Synchronizes the device clock with an external time server.
+* **Observation:** Communication over **UDP Port 123**. Your device sends a "Client" request, and a server returns a "Server" packet containing a high-precision timestamp.
+* **Key Detail:** Essential for security certificate validation and log accuracy.
+
+### 🛠️ ICMPv6 (Internet Control Message Protocol for IPv6)
+* **Purpose:** Handles error reporting and diagnostic functions for IPv6.
+* **Observation:** Likely saw **Neighbor Solicitations** or **Router Advertisements**. 
+* **Key Detail:** Unlike IPv4, which uses ARP, IPv6 uses ICMPv6 (Neighbor Discovery Protocol) to find other devices on the network.
+
+---
+
+## 3. Analysis & Search Filters
+To analyze these packets in Wireshark, the following display filters and search methods were utilized:
+
+| Goal | Wireshark Filter | Description |
+| :--- | :--- | :--- |
+| **Isolate ARP** | `arp` | View only local address resolution traffic. |
+| **Isolate NTP** | `ntp` | View time synchronization requests/responses. |
+| **Isolate ICMPv6** | `icmpv6` | View IPv6 maintenance and discovery packets. |
+| **Specific IP** | `ip.addr == [IP_ADDRESS]` | Filter traffic involving a specific host. |
+
+### Search Techniques
+* **String Search:** Used `Ctrl + F` to search for specific hex or string values within packet details.
+* **Conversation Tracking:** Right-clicked a packet and selected `Follow > UDP Stream` to view the full exchange between the client and server.
+
+---
+
+## 4. Conclusion
+The capture reveals a healthy, active network environment. The presence of ARP and ICMPv6 confirms the device is successfully communicating with the local gateway, while NTP traffic confirms the system clock is being maintained for security and synchronization.
